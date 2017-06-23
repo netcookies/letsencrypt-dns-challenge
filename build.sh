@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build -t letsencrypt_dnspod .
+docker build -t ldhd .
