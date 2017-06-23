@@ -1,5 +1,7 @@
-# letsencrypt-dnspod-hook-docker
-Related project https://github.com/ftao/letsencrypt-dnspod-hook
+# Related project
+
+* https://github.com/lukas2511/dehydrated
+* https://github.com/ftao/letsencrypt-dnspod-hook
 
 # Build docker images
 
@@ -10,8 +12,5 @@ Related project https://github.com/ftao/letsencrypt-dnspod-hook
 # Usage
 
 ```
-cat > ldhd <<EOF
-#!/bin/sh
-docker run ldhd $1
-EOF
+echo “alias dehydrated=’docker run -v /etc/dehydrated/:/etc/dehydrated/ ldhd -o /etc/dehydrated’
 ```
