@@ -12,5 +12,5 @@
 # Usage
 
 ```
-echo "alias dehydrated='docker rm -f dehydrated > /dev/null 2>&1; docker run --name dehydrated -v /etc/dehydrated/:/etc/dehydrated/ ldhd -o /etc/dehydrated'" >> ~/.bashrc
+echo "alias dehydrated='docker rm -f dehydrated > /dev/null 2>&1; docker run --name dehydrated -v /etc/dehydrated/:/etc/dehydrated/ ldhd'" >> ~/.bashrc
 ```
