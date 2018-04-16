@@ -29,14 +29,14 @@ Examples of domains.env
 
 ```
 # dehydrated
-CHALLENGETYPE="dns-01"
-CONTACT_EMAIL=netcookies@gmail.com
+CHALLENGETYPE=dns-01
+CONTACT_EMAIL=YOUR_EMAIL
 
 # lexicon
 # More available environment https://github.com/AnalogJ/lexicon#environmental-variables
 PROVIDER=dnspod
-LEXICON_DNSPOD_USERNAME=APIID
-LEXICON_DNSPOD_TOKEN=YOURTOKEN
+LEXICON_DNSPOD_USERNAME=API_ID
+LEXICON_DNSPOD_TOKEN=YOUR_TOKEN
 ```
 
 More available environment https://github.com/AnalogJ/lexicon#environmental-variables
