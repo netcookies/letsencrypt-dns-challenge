@@ -13,6 +13,9 @@ echo "alias dehydrated='\
       docker rm -f dehydrated > /dev/null 2>&1; \
       docker run --name dehydrated \
       -v /etc/dehydrated/domains.txt:/app/domains.txt \
+      -v /etc/dehydrated/accounts:/app/accounts \
+      -v /etc/dehydrated/certs:/app/certs \
+      -v /etc/dehydrated/chains:/app/chains \
       --env-file /etc/dehydrated/domains.env \
       netcookies/letsencrypt-dns-challenge \
       '" >> ~/.bashrc
