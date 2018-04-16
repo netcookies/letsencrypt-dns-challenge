@@ -1,8 +1,6 @@
 FROM python:alpine
 MAINTAINER Isulew <netcookies@gmail.com>
 
-ADD run.sh /app/
-
 RUN apk add --update curl wget sed \
     && curl -L $(curl -s https://api.github.com/repos/lukas2511/dehydrated/releases/latest | grep 'browser_download_url.*gz"' | cut -d\" -f4) | tar xz  \
     && mv dehydrated* app && rm -rf dehydrated* && cd app \
@@ -11,7 +9,10 @@ RUN apk add --update curl wget sed \
     && wget https://github.com/AnalogJ/lexicon/raw/master/examples/dehydrated.default.sh -O hook.sh \
     && sed -i 's/^#HOOK=.*/HOOK=hook.sh/g' config \
     && sed -i 's/^#KEY_ALGO/KEY_ALGO/g' config \
-    && chmod +x run.sh
+    && rm -rf /var/cache/apk/*
+
+ADD run.sh /app/
+RUN chmod +x /app/run.sh
 
 WORKDIR /app
 ENTRYPOINT ["/app/run.sh"]
