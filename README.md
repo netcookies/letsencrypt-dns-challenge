@@ -8,6 +8,7 @@
 ## Make docker command as a native CLI
 
 ```
+mkdir -p /etc/dehydrated/
 echo "alias dehydrated='\
       docker rm -f dehydrated > /dev/null 2>&1; \
       docker run --name dehydrated \
