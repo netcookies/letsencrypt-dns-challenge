@@ -5,25 +5,42 @@
 
 # Usage
 
-## Make alias wrapper for docker command
+## Make docker command as a native CLI
 
 ```
-echo "alias dehydrated='docker rm -f dehydrated > /dev/null 2>&1; docker run --name dehydrated -v /etc/dehydrated/:/etc/dehydrated/ netcookies/letsencrypt-dnspod'" >> ~/.bashrc
+echo "alias dehydrated='\
+      docker rm -f dehydrated > /dev/null 2>&1; \
+      docker run --name dehydrated \
+      -v /etc/dehydrated/domains.txt:/app/domains.txt \
+      --env-file /etc/dehydrated/domains.env \
+      netcookies/letsencrypt-dns-challenge \
+      '" >> ~/.bashrc
 ```
 
-## Donwload and edit [config example](https://github.com/lukas2511/dehydrated/blob/master/docs/examples/config)
+## Put domains.txt and domains.env in /etc/dehydrated
+
+Examples of domains.txt https://github.com/lukas2511/dehydrated/blob/master/docs/examples/domains.txt
+
+Examples of domains.env 
 
 ```
-# config path   /etc/dehydrated/config
-dehydrated -c --accept-terms
+# dehydrated
+CHALLENGETYPE="dns-01"
+CONTACT_EMAIL=netcookies@gmail.com
+
+# lexicon
+# More available environment https://github.com/AnalogJ/lexicon#environmental-variables
+PROVIDER=dnspod
+LEXICON_DNSPOD_USERNAME='APIID'
+LEXICON_DNSPOD_TOKEN='YOURTOKEN'
 ```
 
-## SET Environment in config.sh
+More available environment https://github.com/AnalogJ/lexicon#environmental-variables
+
+
+## Run 
 
 ```
-#!/bin/sh
-
-export PROVIDER=dnspod
-export LEXICON_DNSPOD_USERNAME='APIID'
-export LEXICON_DNSPOD_TOKEN='YOURTOKEN'
+dehydrated --register --accept-terms
+dehydrated -c
 ```
