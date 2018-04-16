@@ -35,8 +35,8 @@ CONTACT_EMAIL=netcookies@gmail.com
 # lexicon
 # More available environment https://github.com/AnalogJ/lexicon#environmental-variables
 PROVIDER=dnspod
-LEXICON_DNSPOD_USERNAME='APIID'
-LEXICON_DNSPOD_TOKEN='YOURTOKEN'
+LEXICON_DNSPOD_USERNAME=APIID
+LEXICON_DNSPOD_TOKEN=YOURTOKEN
 ```
 
 More available environment https://github.com/AnalogJ/lexicon#environmental-variables
