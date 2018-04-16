@@ -7,7 +7,7 @@ RUN apk add --update curl wget sed bash openssl \
     && pip install dns-lexicon \
     && wget https://github.com/lukas2511/dehydrated/raw/master/docs/examples/config \
     && wget https://github.com/AnalogJ/lexicon/raw/master/examples/dehydrated.default.sh -O hook.sh \
-    && chmod +x hook.sh
+    && chmod +x hook.sh \
     && sed -i 's/^#HOOK=.*/HOOK=\/app\/hook.sh/g' config \
     && sed -i 's/^#KEY_ALGO/KEY_ALGO/g' config \
     && rm -rf /var/cache/apk/*
