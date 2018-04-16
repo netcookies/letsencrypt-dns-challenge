@@ -11,7 +11,6 @@ RUN apk add --update curl wget sed \
     && wget https://github.com/AnalogJ/lexicon/raw/master/examples/dehydrated.default.sh -O hook.sh \
     && sed -i 's/^#HOOK=.*/HOOK=hook.sh/g' config \
     && sed -i 's/^#KEY_ALGO/KEY_ALGO/g' config \
-    && ln -s /usr/include/locale.h /usr/include/xlocale.h \
     && chmod +x run.sh
 
 WORKDIR /app
