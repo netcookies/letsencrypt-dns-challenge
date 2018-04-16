@@ -1,7 +1,7 @@
 # Related project
 
 * https://github.com/lukas2511/dehydrated
-* https://github.com/ftao/letsencrypt-dnspod-hook
+* https://github.com/AnalogJ/lexicon
 
 # Usage
 
@@ -16,4 +16,14 @@ echo "alias dehydrated='docker rm -f dehydrated > /dev/null 2>&1; docker run --n
 ```
 # config path   /etc/dehydrated/config
 dehydrated -c --accept-terms
+```
+
+## SET Environment in config.sh
+
+```
+#!/bin/sh
+
+export PROVIDER=dnspod
+export LEXICON_DNSPOD_USERNAME='APIID'
+export LEXICON_DNSPOD_TOKEN='YOURTOKEN'
 ```
