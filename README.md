@@ -1,6 +1,6 @@
 # Related project
 
-* https://github.com/lukas2511/dehydrated
+* https://github.com/dehydrated-io/dehydrated
 * https://github.com/AnalogJ/lexicon
 
 # Usage
@@ -23,7 +23,7 @@ echo "alias dehydrated='\
 
 ## Put domains.txt and domains.env in /etc/dehydrated
 
-Examples of domains.txt https://github.com/lukas2511/dehydrated/blob/master/docs/examples/domains.txt
+Examples of domains.txt https://github.com/dehydrated-io/dehydrated/blob/master/docs/examples/domains.txt
 
 Examples of domains.env 
 
